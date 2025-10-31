@@ -6,20 +6,20 @@
 #    By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/23 11:40:51 by tdharmar          #+#    #+#              #
-#    Updated: 2025/10/31 12:47:52 by tdharmar         ###   ########.fr        #
+#    Updated: 2025/10/31 13:48:38 by tdharmar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			:=	push_swap
 
 CC				:=	cc
-CFLAGS			:=	-Wall -Wextra -Werror
+CFLAGS			:=	-Wall -Wextra -Werror -g3
 
 INC_DIR			:=	includes/	
 SRC_DIR			:=	srcs/
 
-SRCS_FILES		:=	stack/stack_behav.c \
-					other/ft_utilities.c\
+SRCS_FILES		:=	stack/stack_behav.c stack/stack_utils.c \
+					other/ft_utilities.c \
 					main.c
 
 SRCS			:=	$(SRCS_FILES:%.c=$(SRC_DIR)%.c)
