@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 12:27:51 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/10/16 18:53:38 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/10/31 13:04:44 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,40 @@
 
 # include "../libft/libft.h"
 
-typedef struct s_list
+//-------Doubly Linked-List---------//
+typedef struct s_node
 {
-	int				value;
-	int				index;a
-	struct s_list	*next;
-}					t_list;
+	int				content;
+	struct s_node	*prev;
+	struct s_node	*next;
+}	t_node;
 
+//-------Stack some behaviour extra utility---------//
+t_node	*create_node(int content);
+t_node	*add_node(t_node *node, int content);
+void	clear_lst_node(t_node *node);
+t_node	*get_last_or_first_node(t_node *node, int is_last);
+// void	print_stack(t_node *stack);
+size_t	get_stack_len(t_node *stack);
+int		compare_min(int a, int b);
+int		compare_max(int a, int b);
 
+//-------Push Swap Behaviour---------//
+int		swap(t_node **stack);
+int		push(t_node **stack_from, t_node **stack_to);
+int		rotate(t_node **stack, int is_reverse);
+
+//-------Sort---------//
+void	push_swap(t_node *stack_a, t_node *stack_b, size_t len);
+
+//-------Other Utilities---------//
+int		is_valid(t_node *stack, char *str);
+void	ft_showerror_clr_and_exit(t_node *stack);
 
 #endif
 
 /*
-When 3 random number
+When 3 random number - Do the in-place
 
 #Case1
 A B
