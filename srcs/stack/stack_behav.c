@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 12:47:07 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/10/31 13:46:33 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/01 16:32:04 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	clear_lst_node(t_node *node)
 	if (!node)
 		return ;
 	while (node->prev)
-        node = node->prev;
+		node = node->prev;
 	while (node)
 	{
 		traverse = node->next;

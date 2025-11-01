@@ -6,7 +6,7 @@
 #    By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/23 11:40:51 by tdharmar          #+#    #+#              #
-#    Updated: 2025/10/31 13:48:38 by tdharmar         ###   ########.fr        #
+#    Updated: 2025/11/01 16:30:46 by tdharmar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ INC_DIR			:=	includes/
 SRC_DIR			:=	srcs/
 
 SRCS_FILES		:=	stack/stack_behav.c stack/stack_utils.c \
+					sort/push_swap.c
 					other/ft_utilities.c \
 					main.c
 

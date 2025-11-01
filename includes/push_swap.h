@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 12:27:51 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/10/31 13:43:20 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/01 16:31:29 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,10 @@ int		compare_min(int a, int b);
 int		compare_max(int a, int b);
 
 //-------Push Swap Behaviour---------//
+void	push_swap(t_node *stack_a, t_node *stack_b, size_t len);
 int		swap(t_node **stack);
 int		push(t_node **stack_from, t_node **stack_to);
 int		rotate(t_node **stack, int is_reverse);
-
-//-------Sort---------//
-void	push_swap(t_node *stack_a, t_node *stack_b, size_t len);
 
 //-------Other Utilities---------//
 int		is_valid(t_node *stack, char *str);
