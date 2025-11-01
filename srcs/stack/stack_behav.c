@@ -29,10 +29,10 @@ t_node	*add_node(t_node *node, int content)
 {
 	t_node	*new_node;
 
+	if (!node)
+		return (NULL);
 	new_node = create_node(content);
 	if (!new_node)
-		return (NULL);
-	if (!node)
 		return (NULL);
 	node->next = new_node;
 	new_node->prev = node;

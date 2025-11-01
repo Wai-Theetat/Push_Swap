@@ -11,34 +11,73 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(int argc, char **argv)
+static void	free_split_argv(char **strs)
+{
+	int	i;
+
+	if (!strs)
+		return ;
+	i = 0;
+	while (strs[i])
+	{
+		free(strs[i]);
+		i++;
+	}
+	free(strs);
+}
+
+static char	**get_tokens(int argc, char **argv, char ***split_out)
+{
+	if (argc == 2)
+	{
+		*split_out = ft_split(argv[1], ' ');
+		return (*split_out);
+	}
+	*split_out = NULL;
+	return (&argv[1]);
+}
+
+static t_node	*build_stack_from_tokens(char **tokens, char **split_ref)
 {
 	int		i;
 	t_node	*stack_a;
-	t_node	*stack_b;
 
 	i = 0;
 	stack_a = NULL;
-	stack_b = NULL;
-	if (argc == 2)
+	while (tokens[i])
 	{
-		argv = ft_split(argv[1], ' ');
-		i = -1;
-	}
-	if (argc > 1)
-	{
-		while (argv[++i])
+		if (is_valid(stack_a, tokens[i]) == 0)
 		{
-			if (is_valid(stack_a, argv[i]) == 0)
-				ft_showerror_clr_and_exit(stack_a);
-			stack_a = add_node(stack_a, ft_atoi(argv[i]));
+			if (split_ref)
+				free_split_argv(split_ref);
+			ft_showerror_clr_and_exit(stack_a);
 		}
-		// push_swap(stack_a, stack_b, get_stack_len(stack_a));
-		clear_lst_node(stack_a);
-		clear_lst_node(stack_b);
+		stack_a = add_node(stack_a, ft_atoi(tokens[i]));
+		i++;
 	}
-    return (0);
+	return (stack_a);
 }
 
+int	main(int argc, char **argv)
+{
+	char	**tokens;
+	char	**split_ref;
+	t_node	*stack_a;
+	t_node	*stack_b;
+
+	stack_a = NULL;
+	stack_b = NULL;
+	split_ref = NULL;
+	if (argc <= 1)
+		return (0);
+	tokens = get_tokens(argc, argv, &split_ref);
+	stack_a = build_stack_from_tokens(tokens, split_ref);
+    // push_swap(stack_a, stack_b, get_stack_len(stack_a));
+	clear_lst_node(stack_a);
+	clear_lst_node(stack_b);
+	if (split_ref)
+		free_split_argv(split_ref);
+	return (0);
+}

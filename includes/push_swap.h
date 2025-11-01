@@ -45,7 +45,6 @@ void	push_swap(t_node *stack_a, t_node *stack_b, size_t len);
 //-------Other Utilities---------//
 int		is_valid(t_node *stack, char *str);
 void	ft_showerror_clr_and_exit(t_node *stack);
-
 #endif
 
 /*
