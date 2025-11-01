@@ -27,6 +27,7 @@ typedef struct s_node
 t_node	*create_node(int content);
 t_node	*add_node(t_node *node, int content);
 void	clear_lst_node(t_node *node);
+
 t_node	*get_last_or_first_node(t_node *node, int is_last);
 // void	print_stack(t_node *stack);
 size_t	get_stack_len(t_node *stack);
