@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap_behav.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/01 16:29:27 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/01 20:36:10 by tdharmar         ###   ########.fr       */
+/*   Created: 2025/11/01 19:41:38 by tdharmar          #+#    #+#             */
+/*   Updated: 2025/11/01 20:46:05 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "push_swap.h"
+#include "push_swap.h"
 
-// void	push_swap(t_node *stack_a, t_node *stack_b, size_t len)
-// {
+int		swap(t_node **stack)
+{
+	t_node	*temp;
 	
-// }
+	*stack	= get_last_or_first_node(*stack, 0);
+}
+
+
+
+int		push(t_node **stack_from, t_node **stack_to);
+int		rotate(t_node **stack, int is_reverse);

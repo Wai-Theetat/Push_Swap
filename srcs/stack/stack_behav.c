@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 12:47:07 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/01 16:32:04 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/01 20:36:23 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ t_node	*add_node(t_node *node, int content)
 {
 	t_node	*new_node;
 
-	if (!node)
-		return (NULL);
 	new_node = create_node(content);
 	if (!new_node)
 		return (NULL);
+	if (!node)
+		return (new_node);
 	node->next = new_node;
 	new_node->prev = node;
 	return (new_node);
@@ -42,6 +42,7 @@ t_node	*add_node(t_node *node, int content)
 void	clear_lst_node(t_node *node)
 {
 	t_node	*traverse;
+	int		cnt = 0;
 
 	if (!node)
 		return ;
@@ -51,6 +52,33 @@ void	clear_lst_node(t_node *node)
 	{
 		traverse = node->next;
 		free(node);
+		cnt++;
 		node = traverse;
 	}
+}
+//Debugger
+void	print_two_stack(t_node *a, t_node *b)
+{
+    t_node	*ta;
+    t_node	*tb;
+
+    ta = get_last_or_first_node(a, 0);
+    tb = get_last_or_first_node(b, 0);
+    while (ta || tb)
+    {
+		if (ta)
+		printf("%d\t", ta->content);
+        else
+		printf(" \t");
+        if (tb)
+		printf("%d\n", tb->content);
+        else
+		printf("\n");
+        if (ta)
+		ta = ta->next;
+        if (tb)
+		tb = tb->next;
+    }
+	printf("_\t_\n");
+	printf("A\tB\n");
 }
