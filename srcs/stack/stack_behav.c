@@ -45,7 +45,8 @@ void	clear_lst_node(t_node *node)
 
 	if (!node)
 		return ;
-	node = get_last_or_first_node(node, 0);
+	while (node->prev)
+        node = node->prev;
 	while (node)
 	{
 		traverse = node->next;
