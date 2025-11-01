@@ -13,48 +13,32 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-static void	ft_free_array(char **arr)
-{
-	int	i;
-
-	if (!arr)
-		return;
-	i = 0;
-	while (arr[i])
-	{
-		free(arr[i]);
-		i++;
-	}
-	free(arr);
-}
-
 int	main(int argc, char **argv)
 {
-	// int		i;
-	// t_node	*stack_a;
-	// t_node	*stack_b;
+	int		i;
+	t_node	*stack_a;
+	t_node	*stack_b;
 
-	// i = 0;
-	// stack_a = NULL;
-	// stack_b = NULL;
-	// if (argc == 2)
-	// {
-	// 	argv = ft_split(argv[1], ' ');
-	// 	i = -1;
-	// }
-	// if (argc > 1)
-	// {
-	// 	while (argv[++i])
-	// 	{
-	// 		if (is_valid(stack_a, argv[i]) == 0)
-	// 			ft_showerror_clr_and_exit(stack_a);
-	// 		stack_a = add_node(stack_a, ft_atoi(argv[i]));
-	// 	}
-	// 	// push_swap(stack_a, stack_b, get_stack_len(stack_a));
-	// 	clear_lst_node(stack_a);
-	// 	clear_lst_node(stack_b);
-	// }
-	// ft_free_array(argv);
+	i = 0;
+	stack_a = NULL;
+	stack_b = NULL;
+	if (argc == 2)
+	{
+		argv = ft_split(argv[1], ' ');
+		i = -1;
+	}
+	if (argc > 1)
+	{
+		while (argv[++i])
+		{
+			if (is_valid(stack_a, argv[i]) == 0)
+				ft_showerror_clr_and_exit(stack_a);
+			stack_a = add_node(stack_a, ft_atoi(argv[i]));
+		}
+		// push_swap(stack_a, stack_b, get_stack_len(stack_a));
+		clear_lst_node(stack_a);
+		clear_lst_node(stack_b);
+	}
     return (0);
 }
 
