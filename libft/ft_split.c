@@ -63,7 +63,7 @@ static char	*ft_word_dup(const char *str, size_t len)
 
 static void	*ft_free_all(char **arr, int size)
 {
-	while (size > 0)
+	while (size--)
 		free(arr[size]);
 	free(arr);
 	return (NULL);

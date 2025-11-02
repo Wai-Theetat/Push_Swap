@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 18:46:41 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/01 21:01:10 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/02 13:33:42 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ static t_node	*build_stack_from_tokens(char **tokens, char **split_ref)
 	stack_a = NULL;
 	while (tokens[i])
 	{
-		//printf("%d", is_valid(stack_a, tokens[i]));
-		//printf("current token = %s\n", tokens[i]);
 		if (is_valid(stack_a, tokens[i]) == 0)
 		{
 			if (split_ref)
@@ -76,8 +74,10 @@ int	main(int argc, char **argv)
 		return (0);
 	tokens = get_tokens(argc, argv, &split_ref);
 	stack_a = build_stack_from_tokens(tokens, split_ref);
+	push_swap(stack_a, stack_b, get_stack_len(stack_a));
 	print_two_stack(stack_a, stack_b);
-	// push_swap(stack_a, stack_b, get_stack_len(stack_a));
+	// t_node *tb = get_first_or_last_node(stack_b, 0);
+	// printf("%d", tb->content);
 	clear_lst_node(stack_a);
 	clear_lst_node(stack_b);
 	if (split_ref)

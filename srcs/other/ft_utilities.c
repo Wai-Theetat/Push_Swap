@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 12:00:30 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/10/31 13:02:51 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/02 11:09:28 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	is_valid(t_node *stack, char *str)
 	t_node	*tmp_node;
 	int		nbr;
 
-	tmp_node = get_last_or_first_node(stack, 0);
+	tmp_node = get_first_or_last_node(stack, 0);
 	nbr = ft_atoi_w_err_chk(str, stack);
 	while (tmp_node)
 	{

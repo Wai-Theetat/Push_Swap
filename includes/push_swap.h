@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 12:27:51 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/01 20:53:49 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/02 11:38:48 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
-#include <stdio.h>
+# include <stdio.h>
 
 //-------Doubly Linked-List---------//
 typedef struct s_node
@@ -29,21 +29,22 @@ t_node	*create_node(int content);
 t_node	*add_node(t_node *node, int content);
 void	clear_lst_node(t_node *node);
 
-t_node	*get_last_or_first_node(t_node *node, int is_last);
+t_node	*get_first_or_last_node(t_node *node, int is_last);
 size_t	get_stack_len(t_node *stack);
 int		compare_min(int a, int b);
 int		compare_max(int a, int b);
 
-//-------Push Swap Operation---------//
+//-------Push Swap---------//
 void	push_swap(t_node *stack_a, t_node *stack_b, size_t len);
+//-------Push Swap Operation---------//
 int		swap(t_node **stack);
 int		push(t_node **stack_from, t_node **stack_to);
 int		rotate(t_node **stack, int is_reverse);
+int		operation_ctl(t_node **stack_fst, t_node **stack_snd, char *operation);
 
 //-------Other Utilities---------//
 int		is_valid(t_node *stack, char *str);
 void	ft_showerror_clr_and_exit(t_node *stack);
-
 
 //Debugger
 void	print_two_stack(t_node *a, t_node *b);

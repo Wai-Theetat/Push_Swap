@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 12:47:07 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/01 20:36:23 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/02 13:08:11 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ t_node	*add_node(t_node *node, int content)
 void	clear_lst_node(t_node *node)
 {
 	t_node	*traverse;
-	int		cnt = 0;
 
 	if (!node)
 		return ;
@@ -52,7 +51,6 @@ void	clear_lst_node(t_node *node)
 	{
 		traverse = node->next;
 		free(node);
-		cnt++;
 		node = traverse;
 	}
 }
@@ -62,8 +60,8 @@ void	print_two_stack(t_node *a, t_node *b)
     t_node	*ta;
     t_node	*tb;
 
-    ta = get_last_or_first_node(a, 0);
-    tb = get_last_or_first_node(b, 0);
+    ta = get_first_or_last_node(a, 0);
+    tb = get_first_or_last_node(b, 0);
     while (ta || tb)
     {
 		if (ta)
