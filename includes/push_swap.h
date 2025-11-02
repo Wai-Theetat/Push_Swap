@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 12:27:51 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/01 20:18:14 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/01 20:53:49 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_node
 	struct s_node	*next;
 }	t_node;
 
-//-------Stack some behaviour extra utility---------//
+//-------Stack additional behaviour extra utility---------//
 t_node	*create_node(int content);
 t_node	*add_node(t_node *node, int content);
 void	clear_lst_node(t_node *node);
@@ -34,7 +34,7 @@ size_t	get_stack_len(t_node *stack);
 int		compare_min(int a, int b);
 int		compare_max(int a, int b);
 
-//-------Push Swap Behaviour---------//
+//-------Push Swap Operation---------//
 void	push_swap(t_node *stack_a, t_node *stack_b, size_t len);
 int		swap(t_node **stack);
 int		push(t_node **stack_from, t_node **stack_to);
