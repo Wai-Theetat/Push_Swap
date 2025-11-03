@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 13:35:20 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/03 13:59:27 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:07:12 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,18 @@ void	sort_three_elem(t_node **stack)
 			operation_ctl(stack, NULL, "ra");
 		}
 	}
+}
+
+void	sort_four_or_five(t_node **stack_a, t_node **stack_b, size_t len)
+{
+	size_t	temp;
+
+	temp = len;
+	while (temp-- > 3)
+	{
+		rotate_max_to_top(stack_a, len);
+		operation_ctl(stack_a, stack_b, "pb");
+	}
+	sort_three_elem(stack_a);
+	loop_operation(stack_a, stack_b, "pa", len - 3);
 }

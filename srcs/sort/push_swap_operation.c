@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 19:41:38 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/02 13:30:04 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:05:51 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	push(t_node **stack_from, t_node **stack_to)
 
 int	rotate(t_node **stack, int is_reverse)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	*stack = get_first_or_last_node(*stack, 0);
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
@@ -103,4 +103,14 @@ int	operation_ctl(t_node **stack_a, t_node **stack_b, char *operation)
 	if (ft_strncmp(operation, "rrr", 3) == 0)
 		return (rotate(stack_a, 1) && rotate(stack_b, 1));
 	return (0);
+}
+
+int	loop_operation(t_node **stack_a, t_node **stack_b, char *op, size_t t)
+{
+	int	rtn;
+
+	rtn = 0;
+	while (--t)
+		rtn = operation_ctl(stack_a, stack_b, op);
+	return (rtn);
 }
