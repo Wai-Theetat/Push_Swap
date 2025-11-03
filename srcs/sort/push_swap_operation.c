@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 19:41:38 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/03 15:05:51 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:30:22 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int	push(t_node **stack_from, t_node **stack_to)
 		(*stack_to)->prev = *stack_from;
 	*stack_to = *stack_from;
 	*stack_from = temp;
-	print_two_stack(*stack_from, *stack_to);
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 12:27:51 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/03 15:07:41 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:24:38 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int		loop_operation(t_node **stack_a, t_node **stack_b, char *op, size_t t);
 
 //-------Sort---------//
 int		is_sorted(t_node *stack, int is_decending);
-void	rotate_max_to_top(t_node **stack_a, size_t len);
+void	rotate_min_to_top(t_node **stack_a, size_t len);
 void	sort_three_elem(t_node **stack);
 void	sort_four_or_five(t_node **stack_a, t_node **stack_b, size_t len);
 

@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 12:47:07 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/02 13:08:11 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:27:51 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,29 +54,29 @@ void	clear_lst_node(t_node *node)
 		node = traverse;
 	}
 }
-//Debugger
+
 void	print_two_stack(t_node *a, t_node *b)
 {
-    t_node	*ta;
-    t_node	*tb;
+	t_node	*ta;
+	t_node	*tb;
 
-    ta = get_first_or_last_node(a, 0);
-    tb = get_first_or_last_node(b, 0);
-    while (ta || tb)
-    {
+	ta = get_first_or_last_node(a, 0);
+	tb = get_first_or_last_node(b, 0);
+	while (ta || tb)
+	{
 		if (ta)
-		printf("%d\t", ta->content);
-        else
-		printf(" \t");
-        if (tb)
-		printf("%d\n", tb->content);
-        else
-		printf("\n");
-        if (ta)
-		ta = ta->next;
-        if (tb)
-		tb = tb->next;
-    }
+			printf("%d\t", ta->content);
+		else
+			printf(" \t");
+		if (tb)
+			printf("%d\n", tb->content);
+		else
+			printf("\n");
+		if (ta)
+			ta = ta->next;
+		if (tb)
+			tb = tb->next;
+	}
 	printf("_\t_\n");
 	printf("A\tB\n");
 }
