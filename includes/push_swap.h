@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 12:27:51 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/03 12:24:14 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/03 13:56:22 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,10 @@ int		swap(t_node **stack);
 int		push(t_node **stack_from, t_node **stack_to);
 int		rotate(t_node **stack, int is_reverse);
 int		operation_ctl(t_node **stack_fst, t_node **stack_snd, char *operation);
+
+//-------Sort---------//
+int		is_sorted(t_node *stack, int is_decending);
+void	sort_by_three(t_node **stack);
 
 //-------Other Utilities---------//
 int		is_valid(t_node *stack, char *str);

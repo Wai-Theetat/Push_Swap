@@ -6,7 +6,7 @@
 #    By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/23 11:40:51 by tdharmar          #+#    #+#              #
-#    Updated: 2025/11/01 20:54:19 by tdharmar         ###   ########.fr        #
+#    Updated: 2025/11/03 13:36:05 by tdharmar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC_DIR			:=	srcs/
 
 SRCS_FILES		:=	stack/stack_behav.c stack/stack_utils.c \
 					sort/push_swap.c	sort/push_swap_operation.c \
+					sort/sort_utils.c   sort/sort_case.c \
 					other/ft_utilities.c \
 					main.c
 
