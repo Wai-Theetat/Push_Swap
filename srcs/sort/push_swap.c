@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 16:29:27 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/03 13:40:00 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/03 13:59:06 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ void	push_swap(t_node **stack_a, t_node **stack_b, size_t len)
 	if (len == 2)
 		operation_ctl(stack_a, stack_b, "sa");
 	else if (len == 3)
-		sort_by_three(stack_a);
+		sort_three_elem(stack_a);
 }

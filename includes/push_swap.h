@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 12:27:51 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/03 13:56:22 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/03 13:59:02 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		operation_ctl(t_node **stack_fst, t_node **stack_snd, char *operation);
 
 //-------Sort---------//
 int		is_sorted(t_node *stack, int is_decending);
-void	sort_by_three(t_node **stack);
+void	sort_three_elem(t_node **stack);
 
 //-------Other Utilities---------//
 int		is_valid(t_node *stack, char *str);

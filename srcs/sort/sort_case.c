@@ -6,13 +6,13 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 13:35:20 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/03 13:55:54 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/03 13:59:27 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_by_three(t_node **stack)
+void	sort_three_elem(t_node **stack)
 {
 	if ((*stack)->content > (*stack)->next->content)
 	{
