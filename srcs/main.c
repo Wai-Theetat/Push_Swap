@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 18:46:41 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/02 13:33:42 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/03 12:24:47 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	main(int argc, char **argv)
 		return (0);
 	tokens = get_tokens(argc, argv, &split_ref);
 	stack_a = build_stack_from_tokens(tokens, split_ref);
-	push_swap(stack_a, stack_b, get_stack_len(stack_a));
+	push_swap(&stack_a, &stack_b, get_stack_len(stack_a));
 	print_two_stack(stack_a, stack_b);
 	// t_node *tb = get_first_or_last_node(stack_b, 0);
 	// printf("%d", tb->content);
