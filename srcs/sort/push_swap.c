@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 16:29:27 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/03 15:06:11 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/04 12:44:06 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,6 @@ void	push_swap(t_node **stack_a, t_node **stack_b, size_t len)
 		sort_three_elem(stack_a);
 	else if (len > 3 && len < 6)
 		sort_four_or_five(stack_a, stack_b, len);
+	else
+		sort_general(stack_a, stack_b, len);
 }

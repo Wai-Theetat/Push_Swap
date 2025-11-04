@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 19:41:38 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/03 15:30:22 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/04 12:44:02 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ int	loop_operation(t_node **stack_a, t_node **stack_b, char *op, size_t t)
 	int	rtn;
 
 	rtn = 0;
-	while (--t)
+	while (t--)
 		rtn = operation_ctl(stack_a, stack_b, op);
 	return (rtn);
 }
