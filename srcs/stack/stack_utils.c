@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 13:18:13 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/02 11:09:28 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/04 15:14:38 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,23 @@ size_t	get_stack_len(t_node *stack)
 	return (len);
 }
 
-int	compare_min(int a, int b)
+int	min(int a, int b)
 {
 	if (a < b)
 		return (a);
 	return (b);
 }
 
-int	compare_max(int a, int b)
+int	max(int a, int b)
 {
 	if (a > b)
 		return (a);
 	return (b);
+}
+
+void	reverse_pos(t_node **stack_a, t_node **stack_b, int targ_ind[2])
+{
+	targ_ind[0] = get_stack_len(*stack_a) - targ_ind[0];
+	if (targ_ind[1] != 0)
+		targ_ind[1] = get_stack_len(*stack_b) - targ_ind[1];
 }

@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 12:27:51 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/04 14:32:33 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/04 15:13:35 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	clear_lst_node(t_node *node);
 
 t_node	*get_first_or_last_node(t_node *node, int is_last);
 size_t	get_stack_len(t_node *stack);
-int		compare_min(int a, int b);
-int		compare_max(int a, int b);
+int		min(int a, int b);
+int		max(int a, int b);
 
 //-------Push Swap---------//
 void	push_swap(t_node **stack_a, t_node **stack_b, size_t len);
@@ -50,9 +50,19 @@ void	sort_four_or_five(t_node **stack_a, t_node **stack_b, size_t len);
 void	sort_general(t_node **stack_a, t_node **stack_b);
 
 //-------Calculations---------//
+int		lcm(int targ_ind[2], int len_a, int len_b, int return_move);
+int		calc(t_node *stack_a, t_node *stack_b, int len, int rt_pos_b);
+int		execute_calc(t_node *stack_a, t_node *stack_b, int len, int rt_pos_b);
+int		find_min_index(t_node *stack_a, t_node *stack_b, int len);
 
 //-------General Sort Utils---------//
-
+int		node_index(t_node *stack, int target);
+int		min_max_pos(t_node *stack, int max, int return_index);
+int		find_target(t_node *stack_from, t_node *stack_to);
+void	target_push(t_node **stack, int index);
+void	reverse_pos(t_node **stack_a, t_node **stack_b, int targ_ind[2]);
+void	exec_smt(t_node **stack_a, t_node **stack_b, int targ_ind[2], int mode);
+void	exec_ps(t_node **stack_a, t_node **stack_b, int targ_ind[2], int mode);
 
 //-------Other Utilities---------//
 int		is_valid(t_node *stack, char *str);

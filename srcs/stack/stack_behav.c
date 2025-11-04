@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 12:47:07 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/03 15:27:51 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/04 15:19:57 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,18 +65,18 @@ void	print_two_stack(t_node *a, t_node *b)
 	while (ta || tb)
 	{
 		if (ta)
-			printf("%d\t", ta->content);
+			ft_printf("%d\t", ta->content);
 		else
-			printf(" \t");
+			ft_printf(" \t");
 		if (tb)
-			printf("%d\n", tb->content);
+			ft_printf("%d\n", tb->content);
 		else
-			printf("\n");
+			ft_printf("\n");
 		if (ta)
 			ta = ta->next;
 		if (tb)
 			tb = tb->next;
 	}
-	printf("_\t_\n");
-	printf("A\tB\n");
+	ft_printf("_\t_\n");
+	ft_printf("A\tB\n");
 }
