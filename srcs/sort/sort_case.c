@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 13:35:20 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/04 14:13:19 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/04 14:32:02 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,4 @@ void	sort_four_or_five(t_node **stack_a, t_node **stack_b, size_t len)
 
 void	sort_general(t_node **stack_a, t_node **stack_b)
 {
-	int	min_ind;
-
-	min_ind = 0;
-	loop_operation(stack_a, stack_b, "pb", 2);
-	while (get_stack_len(*stack_a) > 3)
-	{
-		min_ind = find_min_ind(*stack_a, *stack_b, get_stack_len(*stack_a));
-	}
 }

@@ -6,7 +6,7 @@
 #    By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/23 11:40:51 by tdharmar          #+#    #+#              #
-#    Updated: 2025/11/04 13:57:53 by tdharmar         ###   ########.fr        #
+#    Updated: 2025/11/04 14:33:57 by tdharmar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,10 +18,10 @@ CFLAGS			:=	-Wall -Wextra -Werror -g3
 INC_DIR			:=	includes/	
 SRC_DIR			:=	srcs/
 
-SRCS_FILES		:=	stack/stack_behav.c stack/stack_utils.c \
-					sort/push_swap.c	sort/push_swap_operation.c \
-					sort/sort_utils.c   sort/sort_case.c \
-					sort/calculation.c \
+SRCS_FILES		:=	stack/stack_behav.c 		stack/stack_utils.c \
+					sort/push_swap_main.c		sort/push_swap_operation.c \
+					sort/sort_utils.c   		sort/sort_case.c \
+					sort/sort_general_utils.c 	sort/sort_general_calc.c  \
 					other/ft_utilities.c \
 					main.c
 
