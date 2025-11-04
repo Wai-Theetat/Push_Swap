@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 13:35:20 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/04 12:42:52 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/04 13:15:18 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,5 @@ void	sort_four_or_five(t_node **stack_a, t_node **stack_b, size_t len)
 
 void	sort_general(t_node **stack_a, t_node **stack_b, size_t len)
 {
-	(void)stack_a;
-	(void)stack_b;
-	(void)len;	
+	
 }
