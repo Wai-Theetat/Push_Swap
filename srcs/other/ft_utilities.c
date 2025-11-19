@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 12:00:30 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/19 20:28:01 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/19 21:25:33 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	is_space(char c)
 	return (0);
 }
 
-int	ft_atoi_w_err_chk(char *str, t_node *stack)
+static int	get_valid_int(char *str, int *val)
 {
 	long long int	temp;
 	int				multi;
@@ -47,17 +47,18 @@ int	ft_atoi_w_err_chk(char *str, t_node *stack)
 	if (*str == '-' || *str == '+')
 		str++;
 	if (!*str)
-		ft_showerror_clr_and_exit(stack);
+		return (0);
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			ft_showerror_clr_and_exit(stack);
+			return (0);
 		temp = (temp * 10) + (*str - '0');
 		str++;
 	}
 	if ((multi * temp) > 2147483647 || (multi * temp) < -2147483648)
-		ft_showerror_clr_and_exit(stack);
-	return (multi * temp);
+		return (0);
+	*val = (int)(multi * temp);
+	return (1);
 }
 
 int	is_valid(t_node *stack, char *str)
@@ -65,8 +66,9 @@ int	is_valid(t_node *stack, char *str)
 	t_node	*tmp_node;
 	int		nbr;
 
+	if (!get_valid_int(str, &nbr))
+		return (0);
 	tmp_node = get_first_or_last_node(stack, 0);
-	nbr = ft_atoi_w_err_chk(str, stack);
 	while (tmp_node)
 	{
 		if (tmp_node->content == nbr)

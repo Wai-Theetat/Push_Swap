@@ -6,7 +6,7 @@
 #    By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/23 11:40:51 by tdharmar          #+#    #+#              #
-#    Updated: 2025/11/19 20:44:29 by tdharmar         ###   ########.fr        #
+#    Updated: 2025/11/19 20:50:09 by tdharmar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRCS_FILES		:=	stack/stack_build.c			stack/stack_behav.c 		stack/stack_utils.c \
 SRCS			:=	$(SRCS_FILES:%.c=$(SRC_DIR)%.c)
 OBJS			:=	$(SRCS:%.c=%.o)
 
-UTILS_OBJS		:=	$(filter-out $(SRCS_DIR)main.o, $(OBJS))
+UTILS_OBJS		:=	$(filter-out $(SRC_DIR)main.o, $(OBJS))
 
 BONUS_DIR		:=	bonus/
 BONUS_FILES		:=	checker.c get_next_line.c get_next_line_utils.c

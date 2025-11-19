@@ -6,12 +6,20 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 19:17:20 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/19 20:32:40 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/19 21:38:33 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "get_next_line.h"
+
+static void	cleanup_resources(t_node *a, t_node *b, char **ref)
+{
+	clear_lst_node(a);
+	clear_lst_node(b);
+	if (ref)
+		free_split_argv(ref);
+}
 
 static int	exec_silent(char *op, t_node **a, t_node **b)
 {
@@ -40,7 +48,7 @@ static int	exec_silent(char *op, t_node **a, t_node **b)
 	return (0);
 }
 
-static void	read_and_exec(t_node **a, t_node **b)
+static void	read_and_exec(t_node **a, t_node **b, char **ref)
 {
 	char	*line;
 
@@ -50,22 +58,13 @@ static void	read_and_exec(t_node **a, t_node **b)
 		if (!exec_silent(line, a, b))
 		{
 			free(line);
-			clear_lst_node(*a);
-			clear_lst_node(*b);
+			cleanup_resources(*a, *b, ref);
 			ft_putstr_fd("Error\n", 2);
 			exit(EXIT_FAILURE);
 		}
 		free(line);
 		line = get_next_line(0);
 	}
-}
-
-static void	cleanup_resources(t_node *a, t_node *b, char **ref)
-{
-	clear_lst_node(a);
-	clear_lst_node(b);
-	if (ref)
-		free_split_argv(ref);
 }
 
 int	main(int argc, char **argv)
@@ -83,12 +82,11 @@ int	main(int argc, char **argv)
 	tokens = get_tokens(argc, argv, &split_ref);
 	if (!tokens || !tokens[0])
 	{
-		if (split_ref)
-			free_split_argv(split_ref);
+		free_split_argv(split_ref);
 		puterr();
 	}
 	stack_a = build_stack_from_tokens(tokens, split_ref);
-	read_and_exec(&stack_a, &stack_b);
+	read_and_exec(&stack_a, &stack_b, split_ref);
 	if (is_sorted(stack_a, 0) && get_stack_len(stack_b) == 0)
 		ft_putstr_fd("OK\n", 1);
 	else

@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 18:46:41 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/19 20:29:14 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/19 21:36:30 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ int	main(int argc, char **argv)
 	tokens = get_tokens(argc, argv, &split_ref);
 	if (!tokens || !tokens[0])
 	{
-		if (split_ref)
-			free_split_argv(split_ref);
+		free_split_argv(split_ref);
 		puterr();
 	}
 	stack_a = build_stack_from_tokens(tokens, split_ref);
