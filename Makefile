@@ -6,7 +6,7 @@
 #    By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/23 11:40:51 by tdharmar          #+#    #+#              #
-#    Updated: 2025/11/19 19:17:13 by tdharmar         ###   ########.fr        #
+#    Updated: 2025/11/19 20:44:29 by tdharmar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,12 @@ NAME			:=	push_swap
 BONUS_NAME		:=	checker
 
 CC				:=	cc
-CFLAGS			:=	-Wall -Wextra -Werror
+CFLAGS			:=	-Wall -Wextra -Werror -g3
 
 INC_DIR			:=	includes/	
 SRC_DIR			:=	srcs/
 
-SRCS_FILES		:=	stack/stack_behav.c 		stack/stack_utils.c \
+SRCS_FILES		:=	stack/stack_build.c			stack/stack_behav.c 		stack/stack_utils.c \
 					sort/push_swap_main.c		sort/push_swap_operation.c \
 					sort/sort_utils.c   		sort/sort_case.c \
 					sort/sort_general_utils.c 	sort/sort_general_calc_fst.c  sort/sort_general_calc_snd.c \
@@ -32,7 +32,7 @@ OBJS			:=	$(SRCS:%.c=%.o)
 UTILS_OBJS		:=	$(filter-out $(SRCS_DIR)main.o, $(OBJS))
 
 BONUS_DIR		:=	bonus/
-BONUS_FILES		:=	main.c
+BONUS_FILES		:=	checker.c get_next_line.c get_next_line_utils.c
 
 BONUS			:=	$(BONUS_FILES:%.c=$(BONUS_DIR)%.c)
 BONUS_OBJS		:=	$(BONUS:%.c=%.o)
@@ -69,6 +69,6 @@ $(BONUS_NAME): $(BONUS_OBJS) $(UTILS_OBJS) Makefile
 	${CC} ${CFLAGS} -I${INC_DIR} $(BONUS_OBJS) $(UTILS_OBJS) libft.a -o $@
 
 $(BONUS_OBJS): %.o : %.c
-	$(CC) $(CFLAG) -I$(INC_DIR) -c $< -o $@
+	${CC} ${CFLAGS} -I${INC_DIR} -c $< -o $@
 
 .PHONY: all clean fclean re

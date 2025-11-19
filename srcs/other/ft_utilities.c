@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 12:00:30 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/19 11:29:43 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/19 20:28:01 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,10 @@ int	is_valid(t_node *stack, char *str)
 		tmp_node = tmp_node->next;
 	}
 	return (1);
+}
+
+void	puterr(void)
+{
+	write(2, "Error\n", 6);
+	exit(EXIT_FAILURE);
 }
