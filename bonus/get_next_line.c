@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 11:54:10 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/19 22:03:30 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/20 01:25:44 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,22 +106,25 @@ char	*ft_trim_first_line(char *txt)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer[OPEN_FD_SIZE];
+	char		**buffer;
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buffer[fd] = ft_update_buf(fd, buffer[fd]);
-	if (!buffer[fd])
+	buffer = get_buffer_ref(fd);
+	if (!buffer)
 		return (NULL);
-	line = ft_get_first_line(buffer[fd]);
+	*buffer = ft_update_buf(fd, *buffer);
+	if (!*buffer)
+		return (NULL);
+	line = ft_get_first_line(*buffer);
 	if (!line)
 	{
-		free(buffer[fd]);
-		buffer[fd] = NULL;
+		free(*buffer);
+		*buffer = NULL;
 		return (NULL);
 	}
-	buffer[fd] = ft_trim_first_line(buffer[fd]);
+	*buffer = ft_trim_first_line(*buffer);
 	if (line[0] == '\0')
 		return (free(line), NULL);
 	return (line);
