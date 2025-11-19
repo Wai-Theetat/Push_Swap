@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 19:17:20 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/19 21:38:33 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/19 22:02:52 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ static void	read_and_exec(t_node **a, t_node **b, char **ref)
 			free(line);
 			cleanup_resources(*a, *b, ref);
 			ft_putstr_fd("Error\n", 2);
+			get_next_line(0);
 			exit(EXIT_FAILURE);
 		}
 		free(line);
