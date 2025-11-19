@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 19:17:20 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/19 22:09:29 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/19 22:21:19 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	split_ref = NULL;
 	if (argc <= 1)
-		puterr();
+		return (0);
 	tokens = get_tokens(argc, argv, &split_ref);
 	if (!tokens || !tokens[0])
 	{

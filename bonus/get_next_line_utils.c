@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 11:54:24 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/19 22:09:23 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/19 22:16:30 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_append_str(char *fst, char *snd, size_t sndlen)
 	return (result);
 }
 
-static char	**get_buffer_ref(int fd)
+char	**get_buffer_ref(int fd)
 {
 	static char	*buffers[OPEN_FD_SIZE];
 
