@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 12:00:30 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/02 11:09:28 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/19 11:29:43 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_showerror_clr_and_exit(t_node *stack)
 {
 	clear_lst_node(stack);
-	ft_printf("Error\n");
+	ft_putstr_fd("Error\n", 2);
 	exit(EXIT_FAILURE);
 }
 

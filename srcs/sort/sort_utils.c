@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 13:23:00 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/04 14:32:07 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/19 10:58:33 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ void	rotate_min_to_top(t_node **stack_a, size_t len)
 	{
 		moves = len - min_pos;
 		while (moves--)
+		{
 			operation_ctl(stack_a, NULL, "rra");
+		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 13:35:20 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/04 15:19:14 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/19 11:29:53 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,11 @@ void	sort_four_or_five(t_node **stack_a, t_node **stack_b, size_t len)
 	temp = len;
 	while (temp-- > 3)
 	{
-		rotate_min_to_top(stack_a, len);
+		rotate_min_to_top(stack_a, temp + 1);
 		operation_ctl(stack_a, stack_b, "pb");
 	}
-	sort_three_elem(stack_a);
+	if (!is_sorted(*stack_a, 0))
+		sort_three_elem(stack_a);
 	loop_operation(stack_a, stack_b, "pa", len - 3);
 }
 

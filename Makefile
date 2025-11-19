@@ -6,14 +6,14 @@
 #    By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/23 11:40:51 by tdharmar          #+#    #+#              #
-#    Updated: 2025/11/04 15:21:01 by tdharmar         ###   ########.fr        #
+#    Updated: 2025/11/19 10:13:57 by tdharmar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			:=	push_swap
 
 CC				:=	cc
-CFLAGS			:=	-Wall -Wextra -Werror -g3
+CFLAGS			:=	-Wall -Wextra -Werror
 
 INC_DIR			:=	includes/	
 SRC_DIR			:=	srcs/
