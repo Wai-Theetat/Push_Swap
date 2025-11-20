@@ -6,7 +6,7 @@
 #    By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/23 11:40:51 by tdharmar          #+#    #+#              #
-#    Updated: 2025/11/19 20:50:09 by tdharmar         ###   ########.fr        #
+#    Updated: 2025/11/20 12:04:05 by tdharmar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME			:=	push_swap
 BONUS_NAME		:=	checker
 
 CC				:=	cc
-CFLAGS			:=	-Wall -Wextra -Werror -g3
+CFLAGS			:=	-Wall -Wextra -Werror
 
 INC_DIR			:=	includes/	
 SRC_DIR			:=	srcs/

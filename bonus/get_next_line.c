@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 11:54:10 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/20 01:25:44 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/20 12:07:12 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_read_more(int fd)
 		bytes_read = read(fd, buf, BUFFER_SIZE);
 	}
 	free(buf);
-	if (bytes_read < 0) 
+	if (bytes_read < 0)
 		return (free(result), NULL);
 	return (result);
 }
