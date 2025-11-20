@@ -6,7 +6,7 @@
 /*   By: tdharmar <tdharmar@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 13:35:20 by tdharmar          #+#    #+#             */
-/*   Updated: 2025/11/19 11:29:53 by tdharmar         ###   ########.fr       */
+/*   Updated: 2025/11/20 12:39:51 by tdharmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,11 @@ void	sort_three_elem(t_node **stack)
 			operation_ctl(stack, NULL, "rra");
 		else
 		{
-			operation_ctl(stack, NULL, "sa");
-			operation_ctl(stack, NULL, "ra");
+			if ((*stack)->next->content > (*stack)->next->next->content)
+			{
+				operation_ctl(stack, NULL, "sa");
+				operation_ctl(stack, NULL, "ra");
+			}
 		}
 	}
 }
